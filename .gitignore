@@ -1,0 +1,26 @@
+# Keep real migration data out of this public instruction package.
+.codex/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.jsonl
+*.jsonl.zst
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.bak
+backups/
+staging/
+private/
+work/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

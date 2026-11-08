@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Migrate"
+  short_description: "Move local Codex chats, sessions, and skills"
+  default_prompt: "Use $codex-migrate to inspect my backup and migrate local Codex history to this computer."
