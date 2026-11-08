@@ -13,7 +13,15 @@ Local Codex data → portable backup → inspect and map → merge → verify
 
 ## Start here
 
-Download this repository, open its folder as your workspace in Codex, and ask:
+Install directly from GitHub for Codex:
+
+```sh
+npx --yes skills add nisargkavi/codex-migration-kit --skill codex-migrate --agent codex --global --yes
+```
+
+Requires Node.js 22.20 or later. This uses the [Skills CLI](https://github.com/vercel-labs/skills) to install the skill across your projects. If it does not appear in Codex, restart the app.
+
+Alternatively, download this repository, open its folder as your workspace in Codex, and ask:
 
 ```text
 Install the local skill at ./skills/codex-migrate in my user skills directory.
