@@ -34,7 +34,7 @@ For a manual install, copy the entire `skills/codex-migrate` folder into a skill
 
 The migration skill itself has no bundled CLI, server, account, or MCP dependency. The optional installer above downloads Vercel's Skills CLI. Codex may create temporary local helpers for the particular archive and app version, and may need a trusted decompressor or isolated runtime repair. If the skill does not appear after installation, restart Codex.
 
-The published command was tested on macOS with Node.js v26.13.0 and Skills CLI 1.7.6 using a fresh temporary install location and npm cache, with enforced filesystem protection. The initial 0.1.0 test matched all six packaged skill files; the checked current Codex configuration, credentials, and skills were unchanged. See [evaluation results](evals/RESULTS.md) for subsequent checks. An installer test is not an end-to-end migration certification.
+Version 0.1.1 was installed from the published command on macOS with Node.js v26.13.0 and Skills CLI 1.7.6 using a fresh temporary install location and npm cache, with enforced filesystem protection. All seven packaged skill files matched; the checked current Codex configuration, credentials, and skills were unchanged. See [evaluation results](evals/RESULTS.md) for scope and checks. An installer test is not an end-to-end migration certification.
 
 ## Use it
 
