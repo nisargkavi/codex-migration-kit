@@ -1,6 +1,6 @@
 # Codex Migration Kit
 
-[![skills.sh](https://skills.sh/b/nisargkavi/codex-migration-kit)](https://skills.sh/nisargkavi/codex-migration-kit)
+[![skills.sh: codex-migrate](assets/skills-sh-badge.svg)](https://www.skills.sh/nisargkavi/codex-migration-kit/codex-migrate)
 
 **Take your local Codex chats, sessions, and custom skills to your next computer.**
 
@@ -34,7 +34,7 @@ For a manual install, copy the entire `skills/codex-migrate` folder into a skill
 
 The migration skill itself has no bundled CLI, server, account, or MCP dependency. The optional installer above downloads Vercel's Skills CLI. Codex may create temporary local helpers for the particular archive and app version, and may need a trusted decompressor or isolated runtime repair. If the skill does not appear after installation, restart Codex.
 
-The published command was tested on macOS with Node.js v26.13.0 and Skills CLI 1.7.6 using a fresh temporary install location and npm cache, with enforced filesystem protection. All six installed files matched the repository; the checked current Codex configuration, credentials, and skills were unchanged. This is an installer test, not an end-to-end migration certification.
+The published command was tested on macOS with Node.js v26.13.0 and Skills CLI 1.7.6 using a fresh temporary install location and npm cache, with enforced filesystem protection. The initial 0.1.0 test matched all six packaged skill files; the checked current Codex configuration, credentials, and skills were unchanged. See [evaluation results](evals/RESULTS.md) for subsequent checks. An installer test is not an end-to-end migration certification.
 
 ## Use it
 
@@ -69,7 +69,7 @@ An existing copied `.codex` folder can be used instead of a ZIP. The skill disco
 | --- | --- |
 | Available local conversations and sessions | Inspect identities and merge compatible records. Include compressed rollouts. |
 | Project roots and chat associations | Remap to the supplied destination projects. |
-| Custom skills and their resources | Copy portable content, repair links, and report conflicts or required runtime repair. |
+| Custom skills and their resources | Preserve portable files in staging; review before activation. Report copied, activated and pending content separately. |
 | Included attachments, images, plans and visualizations | Preserve available files within the requested scope. |
 | Existing destination history and sign-in | Preserve. |
 | Credentials, cookies, installation identity and native runtimes | Exclude from export and retain destination equivalents. |
@@ -80,6 +80,8 @@ A copied `.codex` folder may not contain skills installed elsewhere or attachmen
 ## Why this needs more than copying a folder
 
 The workflow accounts for SQLite WAL files, compressed sessions, renamed project directories, duplicate identities, history byte offsets, and native versus legacy project records. It stages a merge and a recovery journal instead of replacing the destination with the source directory.
+
+Backup inspection uses bounded metadata rather than loading old messages or imported instructions into the migration context. Historical content remains in the transferred files. Imported skills stay outside auto-discovered locations until reviewed or matched to independently trusted content; a pending skill review does not prevent chat transfer. See the [backup trust boundary](skills/codex-migrate/references/untrusted-input.md).
 
 The desktop app can overwrite externally edited sidebar state while running. An import may therefore finish with a prepared offline step: quit Codex normally, let the disclosed one-time helper apply the staged update, then reopen and verify. A pending restart is reported as pending, not as a completed migration.
 
@@ -120,6 +122,7 @@ skills/codex-migrate/
     export-import.md          Archives, portable scope, and offline apply
     path-mapping.md           Filesystems, project identities, and runtimes
     data-integrity.md         SQLite, history cursors, verification, recovery
+    untrusted-input.md        Data-only inspection and skill activation boundary
 docs/
   compatibility.md            Evidence and release checklist
   product-direction.md        Skill versus website, positioning, repo metadata

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="24" viewBox="0 0 208 24" role="img" aria-labelledby="title">
+  <title id="title">skills.sh: codex-migrate</title>
+  <clipPath id="rounded"><rect width="208" height="24" rx="4"/></clipPath>
+  <g clip-path="url(#rounded)">
+    <rect width="72" height="24" fill="#334155"/>
+    <rect x="72" width="136" height="24" fill="#2563eb"/>
+  </g>
+  <g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">
+    <text x="36" y="16">skills.sh</text>
+    <text x="140" y="16">codex-migrate</text>
+  </g>
+</svg>

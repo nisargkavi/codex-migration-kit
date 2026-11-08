@@ -8,7 +8,7 @@ Reviewed 8 November 2026. Directory inclusion, search indexing and ranking are s
 
 Use the one-line command in the README. The supported `skills/codex-migrate/SKILL.md` layout and required frontmatter are already present. There is no need to duplicate SKILL.md at the repository root or add a plugin manifest just for CLI discovery. See [Vercel's skill creation guidance](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md).
 
-The repository also includes the [official badge format](https://www.skills.sh/docs) and a `skills.sh.json` grouping configuration. [Customization documentation](https://www.skills.sh/docs/customize) says configuration is refreshed after a telemetry-enabled install and can remain cached temporarily. This display configuration does not register a skill by itself.
+The repository includes a repository-hosted SVG badge linked to the live skill page and a `skills.sh.json` grouping configuration. The dynamic install-count badge endpoint failed for this repository and a Vercel reference repository during checking, so the README uses a local asset without claiming an install count. [Customization documentation](https://www.skills.sh/docs/customize) says configuration is refreshed after a telemetry-enabled install and can remain cached temporarily. This display configuration does not register a skill by itself.
 
 Verified directory page: https://skills.sh/nisargkavi/codex-migration-kit/codex-migrate
 
