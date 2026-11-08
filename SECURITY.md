@@ -13,3 +13,9 @@ Use local staging and backups with restrictive permissions. Validate archive mem
 For a vulnerability, use GitHub's private vulnerability reporting if the repository owner has enabled it. If it is unavailable, open a minimal issue requesting a private contact route without including exploit payloads, private data, or credentials. Do not assume a private reporting channel exists before it has been configured.
 
 No supported-version security promise is made for this experimental instruction package. Fixes and compatibility evidence should be reviewed before relying on a release for valuable data.
+
+## Directory audit observation
+
+On 8 November 2026, skills.sh displayed a [Snyk W011 warning](https://skills.sh/nisargkavi/codex-migration-kit/codex-migrate/security/snyk): third-party content exposure and indirect prompt-injection risk from reading supplied archives, session history and custom skills. The report labels the issue MEDIUM and describes those sources as untrusted offline inputs. Reading such inputs is part of this migration workflow; the warning is not evidence that an archive has been made safe.
+
+The skill instructs the agent to validate archive paths and expansion limits, treat archived instructions as data, avoid executing imported code, and preserve the source and destination. These measures reduce risk but do not turn a skill into a security sandbox. Agent Trust Hub and Socket were shown as passing separately; their results do not cancel the Snyk warning.

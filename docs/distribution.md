@@ -10,9 +10,11 @@ Use the one-line command in the README. The supported `skills/codex-migrate/SKIL
 
 The repository also includes the [official badge format](https://www.skills.sh/docs) and a `skills.sh.json` grouping configuration. [Customization documentation](https://www.skills.sh/docs/customize) says configuration is refreshed after a telemetry-enabled install and can remain cached temporarily. This display configuration does not register a skill by itself.
 
-Expected directory route: https://skills.sh/nisargkavi/codex-migration-kit/codex-migrate
+Verified directory page: https://skills.sh/nisargkavi/codex-migration-kit/codex-migrate
 
-Status: public GitHub source and install command verified. Public listing/search inclusion has not yet been confirmed. The initial isolated installer test disabled telemetry and therefore did not initiate this indexing route.
+Status: the public skill page was verified live on 8 November 2026, showing the install command and our actual skill instructions. After publishing the metadata update, one isolated install of that updated package used the CLI's default telemetry; its telemetry and audit endpoints returned HTTP 200. This is not a claim about search placement, install counts or leaderboard rank. The initial installer test disabled telemetry and did not initiate indexing.
+
+The directory currently displays passing Agent Trust Hub and Socket checks and a [Snyk W011 warning](https://skills.sh/nisargkavi/codex-migration-kit/codex-migrate/security/snyk) about exposure to untrusted archive content. See SECURITY.md for scope and mitigations; do not present the listing as unanimous security approval.
 
 ## SkillsMP
 
