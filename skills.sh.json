@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Device migration",
+      "description": "Inspect and transfer available local Codex history and custom skills between computers.",
+      "skills": ["codex-migrate"]
+    }
+  ]
+}

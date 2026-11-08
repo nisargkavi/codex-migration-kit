@@ -1,5 +1,7 @@
 # Codex Migration Kit
 
+[![skills.sh](https://skills.sh/b/nisargkavi/codex-migration-kit)](https://skills.sh/nisargkavi/codex-migration-kit)
+
 **Take your local Codex chats, sessions, and custom skills to your next computer.**
 
 A small, inspectable [Agent Skill](skills/codex-migrate/SKILL.md) for assisted export and import between Windows and macOS. It helps Codex inspect a backup, map project folders, preserve existing destination history, and verify the result.
@@ -30,7 +32,9 @@ Preserve an existing skill with the same name if its content differs.
 
 For a manual install, copy the entire `skills/codex-migrate` folder into a skill location discovered by your installation. Current documented user locations are `~/.agents/skills` on macOS and `%USERPROFILE%\.agents\skills` on Windows. Some desktop installations also use `.codex/skills`; use the location your app actually discovers and avoid installing duplicate copies. See the [official skill discovery documentation](https://learn.chatgpt.com/docs/build-skills).
 
-The skill has no permanent CLI, server, account, package installation, or MCP dependency. Codex may create temporary local helpers for the particular archive and app version, and may need a trusted decompressor or isolated runtime repair. If the skill does not appear after installation, restart Codex.
+The migration skill itself has no bundled CLI, server, account, or MCP dependency. The optional installer above downloads Vercel's Skills CLI. Codex may create temporary local helpers for the particular archive and app version, and may need a trusted decompressor or isolated runtime repair. If the skill does not appear after installation, restart Codex.
+
+The published command was tested on macOS with Node.js v26.13.0 and Skills CLI 1.7.6 using a fresh temporary install location and npm cache, with enforced filesystem protection. All six installed files matched the repository; the checked current Codex configuration, credentials, and skills were unchanged. This is an installer test, not an end-to-end migration certification.
 
 ## Use it
 
@@ -97,6 +101,14 @@ This project does not provide continuous sync, concurrent-edit conflict resoluti
 The skill directs file operations to local storage. It does not upload a backup, create a server, or enable telemetry. **That is not a promise of fully offline execution:** Codex may use a remote model, and content the agent reads may enter its context according to your Codex configuration.
 
 Credential files are excluded by default, but old chats and custom files can themselves contain secrets. Keep backups and journals private. Do not attach your real `.codex` folder, credentials, or transcripts to a public issue. See [security and data handling](SECURITY.md).
+
+The separate Skills CLI installer enables installation telemetry and security-audit requests by default. Set `DISABLE_TELEMETRY=1` or `DO_NOT_TRACK=1` in your shell environment to disable them, as described in [Vercel's CLI documentation](https://github.com/vercel-labs/skills#telemetry). This is distinct from the migration skill's own file operations.
+
+## Discovery and directories
+
+The repository uses Vercel's supported `skills/<name>/SKILL.md` layout. Its skill declares a name, description, MIT license, environment requirements, publisher and version; supporting references stay inside the installable folder.
+
+[skills.sh](https://skills.sh/nisargkavi/codex-migration-kit) discovers skills through normal telemetry-enabled CLI installs. A successful local install does not guarantee an immediate public listing or ranking. See [distribution routes and current status](docs/distribution.md) for skills.sh, SkillsMP and Skills Directory.
 
 ## Repository layout
 

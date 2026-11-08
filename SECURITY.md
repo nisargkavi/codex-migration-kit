@@ -6,6 +6,8 @@ Default exports exclude dedicated credential files, browser profiles, tokens, ma
 
 The skill directs operations to local files, but the Codex agent may use a remote model. Data inspected by the agent can enter its context. This repository does not alter the provider's data handling or the user's Codex configuration.
 
+The optional Vercel Skills CLI installer is a separate program with default installation telemetry and security-audit requests. Its documented opt-outs are `DISABLE_TELEMETRY=1` or `DO_NOT_TRACK=1` in the shell environment. See the README for the upstream documentation; the migration skill does not override these settings.
+
 Use local staging and backups with restrictive permissions. Validate archive members and expansion limits, inspect actual database schemas, preserve source inputs, and apply changes only at a safe app boundary. Avoid uploading archives to issue trackers, public demos, paste sites or model chats merely to debug a migration.
 
 For a vulnerability, use GitHub's private vulnerability reporting if the repository owner has enabled it. If it is unavailable, open a minimal issue requesting a private contact route without including exploit payloads, private data, or credentials. Do not assume a private reporting channel exists before it has been configured.

@@ -16,3 +16,9 @@ The ZIP traversal check covers one unsafe-member variant. Symlink escapes, expan
 Review also identified and clarified read-only filesystem probing, compressed-reference resolution, and the limits of structural compatibility evidence. The README installation instructions were reviewed separately for workspace-path ambiguity and corrected.
 
 The precursor Windows → macOS migration informs the skill's technical guidance. It must not be counted as an end-to-end run of this new reusable skill.
+
+## Published install command
+
+The exact README command was executed successfully from the public GitHub repository on macOS with Node.js v26.13.0 and Skills CLI 1.7.6. It used a fresh temporary npm cache, a redirected Node home-directory API and a macOS sandbox denying writes outside the temporary test directory. A negative probe verified outside-write denial and denied reads of the real Codex configuration before installation.
+
+The CLI found and installed one skill to the isolated `.agents/skills/codex-migrate` directory. All six installed files matched repository hashes, including the three references, display metadata and license. Before/after checks of 375 current configuration, credential and skill entries were identical. No GitHub credentials were inherited and telemetry was disabled. This was an isolated directory test, not a fresh OS VM or a Windows execution test.

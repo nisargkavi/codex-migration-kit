@@ -1,6 +1,12 @@
 ---
 name: codex-migrate
 description: Export, inspect, import, or recover local Codex chats, sessions, and custom skills when moving between computers, with project path mapping. Use for device migration or a supplied .codex folder or ZIP, not continuous sync or ChatGPT cloud exports.
+license: MIT
+metadata:
+  author: nisargkavi
+  version: "0.1.0"
+  repository: https://github.com/nisargkavi/codex-migration-kit
+  environment: Designed for Codex with local filesystem and shell access. Imports require SQLite support; compressed rollouts may require Zstandard.
 ---
 
 # Codex Migrate
